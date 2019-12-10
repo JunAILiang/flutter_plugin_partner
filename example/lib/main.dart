@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = await FlutterPluginCsj.platformVersion;
+//      platformVersion = await FlutterPluginCsj.platformVersion;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -57,15 +57,15 @@ class _MyAppState extends State<MyApp> {
             ),
             FlatButton(
               onPressed: (){
-                FlutterPluginCsj.loadVideo("938904444");
+//                FlutterPluginCsj.loadVideo("938904444");
               },
               child: Text('loadVideo'),
             ),
             FlatButton(
               onPressed: (){
-                FlutterPluginCsj.showVideo((call) {
-                  print(call);
-                });
+//                FlutterPluginCsj.showVideo((call) {
+//                  print(call);
+//                });
               },
               child: Text('showVideo'),
             ),

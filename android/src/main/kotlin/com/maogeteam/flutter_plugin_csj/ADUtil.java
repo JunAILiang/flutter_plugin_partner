@@ -40,7 +40,7 @@ public class ADUtil {
     }
 
     public static void toast(String msg){
-        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
     }
 
     private static TTAdNative mTTAdNative;
@@ -76,6 +76,7 @@ public class ADUtil {
             @Override
             public void onRewardVideoCached() {
                 toast("rewardVideoAd video cached");
+                ADUtil.channel.invokeMethod("loadSuccess", null);
             }
 
             //视频广告的素材加载完毕，比如视频url等，在此回调后，可以播放在线视频，网络不好可能出现加载缓冲，影响体验。
@@ -113,7 +114,7 @@ public class ADUtil {
                     @Override
                     public void onVideoError() {
                         toast("rewardVideoAd error");
-                        ADUtil.channel.invokeMethod("onVideoError", null);
+                        ADUtil.channel.invokeMethod("didError", null);
                     }
 
                     //视频播放完成后，奖励验证回调，rewardVerify：是否有效，rewardAmount：奖励梳理，rewardName：奖励名称
